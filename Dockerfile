@@ -6,7 +6,7 @@ RUN apt-get update && \
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
 
-#daemontools
+#daemontools, auto start nginx process
 RUN mkdir -p /etc/bootservices/nginx
 RUN echo "#!/bin/bash\n exec /usr/sbin/nginx" > /etc/bootservices/nginx/run
 RUN chmod +x /etc/bootservices/nginx/run
